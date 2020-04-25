@@ -16,9 +16,10 @@
                 [x] HTML, CSS, JS  etc
             
   # Task
-    [] Create front-end allows user create a Task
-        [] Store it inside of a database (SQL)
-            [] Create table in SQL
+    [x] Create front-end allows user create a Task
+        [x] Store it inside of a database (SQL)
+            [x] Create table in SQL
+        [x]Setup server
         [] GET, POST, append to DOM
         [] Refrest the DOM to show all tasks after it is created. 
     [] Button Complete for each task

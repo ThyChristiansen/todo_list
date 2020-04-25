@@ -18,8 +18,8 @@ router.post('/', (req, res) => {
     let newTask = req.body;
     console.log('Adding new task:', newTask);
 
-    let queryText = `INSERT INTO "tasks" ("listToDo") VALUES ($1);`
-    let values = [newTask.task]
+    let queryText = `INSERT INTO "tasks" ("taskToDo") VALUES ($1);`
+    let values = [newTask.taskToDo]
     pool.query(queryText, values)
         .then((result) => {
             console.log(result);
@@ -31,6 +31,19 @@ router.post('/', (req, res) => {
         })
     // res.send('Hello from post router');
 
+})
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    console.log('Delete route called with id of', id);
+    console.log('in req.body', req.body);
+    let queryText = `DELETE FROM tasks WHERE id=$1;`
+    pool.query(queryText, [id]).then((response) => {
+        console.log(response);
+        res.sendStatus(201);
+    }).catch((error)=>{
+        console.log('Error in delete router',error);
+    })
 })
 
 module.exports = router;

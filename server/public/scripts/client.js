@@ -3,13 +3,15 @@ function readyNow() {
     console.log("JQ");
     getItem();
     $('#addBtn').on('click', addClick);
+    $('#listTask').on('click','#deleteBtn', deleteTask);
+
 
 }
 
 function addClick() {
     console.log('addBtn clicked!');
     let taskToSend = {
-        task: $('#inputTask').val(),
+        taskToDo: $('#inputTask').val(),
     }
     console.log("in task to send", taskToSend);
     $.ajax({
@@ -43,6 +45,26 @@ function renderToDOM(tasksArray){
     el.empty();
     for (let i = 0; i< tasksArray.length; i++){
         let task = tasksArray[i];
-        el.append(`<li>${task.listToDo}</li>`);
+        el.append(`<li>${task.taskToDo}
+        <button id = "deleteBtn" data-id = ${task.id}>Delete</button>
+
+        </li>`);
     }
 }
+
+function deleteTask(){
+    console.log('deleteTask clicked');
+    let taskId = $(this).data('id');
+    console.log(`in DELETE ${taskId}`,taskId);
+    $.ajax({
+        type: 'DELETE',
+        url: `/tasks/${taskId}`,
+    }).then((response) => {
+        console.log(response);
+        getItem();
+    }).catch((error) =>{
+        console.log('Error in delete task',error);
+    })
+
+}
+

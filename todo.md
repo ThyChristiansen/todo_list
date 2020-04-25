@@ -26,7 +26,7 @@
         [x] Refrest the DOM to show all tasks after it is created. 
     [] Button Complete for each task
             [] when btn click => visual representation should change
-    [] Button Delete
+    [x] Button Delete
         [] Remove task both from frond-end and Database
   # Styling
     [] Background

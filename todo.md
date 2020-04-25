@@ -22,8 +22,8 @@
         [x]Setup server
         [] client
             [x] test btn activity
-        [] GET, POST, append to DOM
-        [] Refrest the DOM to show all tasks after it is created. 
+        [x] GET, POST, append to DOM
+        [x] Refrest the DOM to show all tasks after it is created. 
     [] Button Complete for each task
             [] when btn click => visual representation should change
     [] Button Delete

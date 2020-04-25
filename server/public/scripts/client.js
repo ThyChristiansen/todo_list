@@ -8,8 +8,10 @@ function readyNow() {
 
 function addClick() {
     console.log('addBtn clicked!');
-    let taskToSend = $('#inputTask').val();
-    console.log("in object to send", taskToSend);
+    let taskToSend = {
+        task: $('#inputTask').val(),
+    }
+    console.log("in task to send", taskToSend);
     $.ajax({
         type: 'POST',
         url: '/tasks',
@@ -40,8 +42,7 @@ function renderToDOM(tasksArray){
     let el = $('#listTask');
     el.empty();
     for (let i = 0; i< tasksArray.length; i++){
-        el.append(`<li>${tasksArray[i].listToDo}</li>`);
-
-
+        let task = tasksArray[i];
+        el.append(`<li>${task.listToDo}</li>`);
     }
 }

@@ -20,6 +20,8 @@
         [x] Store it inside of a database (SQL)
             [x] Create table in SQL
         [x]Setup server
+        [] client
+            [x] test btn activity
         [] GET, POST, append to DOM
         [] Refrest the DOM to show all tasks after it is created. 
     [] Button Complete for each task

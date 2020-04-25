@@ -4,9 +4,9 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req,res)=>{
-    let queryText = `SELECT * FROM "task-list" ORDER BY "to_do_list";`
+    let queryText = `SELECT * FROM "tasks";`
     pool.query(queryText)
-    .then(result =>{
+    .then((result) =>{
         res.send(result.rows);
     }).catch(error =>{
         console.log('Error in getting task',error);

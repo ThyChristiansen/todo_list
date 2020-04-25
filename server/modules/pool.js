@@ -12,10 +12,10 @@ const pool = new pg.Pool(config);
 
 pool.on('connect', () =>{
     console.log('Connected to progres');
-})
+});
 
-pool.on('error', ()=>{
+pool.on('error', (error)=>{
     console.log('Error connecting to progres',error);
-})
+});
 
 module.exports= pool;

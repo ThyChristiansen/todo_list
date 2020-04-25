@@ -1,18 +1,30 @@
 $(document).ready(readyNow);
 function readyNow() {
     console.log("JQ");
-    refrestTask();
+    getItem();
     $('#addBtn').on('click', addClick);
 
 }
 
 function addClick() {
     console.log('addBtn clicked!');
+    let taskToSend = $('#inputTask').val();
+    console.log("in object to send", taskToSend);
+    $.ajax({
+        type: 'POST',
+        url: '/tasks',
+        data: taskToSend
+    }).then((response)=>{
+        console.log('Back from POST',response);
+        getItem();
+    }).catch((error)=>{
+        console.log('Error in POST',error);
+    })
 
 }
 
-function refrestTask() {
-    console.log('in refrestTask');
+function getItem() {
+    console.log('in getItem');
     $.ajax({
         type: 'GET',
         url: '/tasks',
@@ -28,6 +40,8 @@ function renderToDOM(tasksArray){
     let el = $('#listTask');
     el.empty();
     for (let i = 0; i< tasksArray.length; i++){
-        el.append(`<li>${tasksArray[i].listToDo}</li>`)
+        el.append(`<li>${tasksArray[i].listToDo}</li>`);
+
+
     }
 }

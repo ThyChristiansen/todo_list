@@ -24,25 +24,25 @@
             [x] test btn activity
         [x] GET, POST, append to DOM
         [x] Refrest the DOM to show all tasks after it is created. 
-    [] Button Complete for each task
-            [] when btn click => visual representation should change
+    [x] Button Complete for each task
+            [x] when btn click => visual representation should change
     [x] Button Delete
         [] Remove task both from frond-end and Database
   # Styling
-    [] Background
-    [] font family and size
-    [] text-color of Tasks (to show completed or not)
+    [x] Background
+    [x] font family and size
+    [xx] text-color of Tasks (to show completed or not)
     [] background color Tasks (to show completed or not)
 
 [] clean up & styling    
 
 ## Stretch
   # Practicing git branching. 
-    [] feature-styling-bootstrap
-        [] Add Boostrap to the front-end and style it up.
-            [] Button
-            [] Inputs
-            [] Responsive
+    [x] feature-styling-bootstrap
+        [x] Add Boostrap to the front-end and style it up.
+            [x] Button
+            [x] Inputs
+            [x] Responsive
     [x] feature-confirm-delete
         [x] Create an 'are you sure: yes / no' option when deleting a task.
     [] feature-ordering-task-query

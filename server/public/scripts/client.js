@@ -3,8 +3,8 @@ function readyNow() {
     console.log("JQ");
     getItem();
     $('#addBtn').on('click', addClick);
-    $('#listTask').on('click','#deleteBtn', deleteTask);
-
+    $('#listTask').on('click', '#deleteBtn', deleteTask);
+    $('#listTask').on('click', '#checkboxTask', completeTask);
 
 }
 
@@ -18,11 +18,12 @@ function addClick() {
         type: 'POST',
         url: '/tasks',
         data: taskToSend
-    }).then((response)=>{
-        console.log('Back from POST',response);
+    }).then((response) => {
+        console.log('Back from POST', response);
         getItem();
-    }).catch((error)=>{
-        console.log('Error in POST',error);
+
+    }).catch((error) => {
+        console.log('Error in POST', error);
     })
 
 }
@@ -40,31 +41,63 @@ function getItem() {
     })
 }
 
-function renderToDOM(tasksArray){
+function renderToDOM(tasksArray) {
     let el = $('#listTask');
     el.empty();
-    for (let i = 0; i< tasksArray.length; i++){
+    for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        el.append(`<li>${task.taskToDo}
-        <button id = "deleteBtn" data-id = ${task.id}>Delete</button>
+        el.append(`<li id = "text" class = "beforeCheck"> 
+        <input type="checkbox" id="checkboxTask" data-id = ${task.id}">       
+        ${task.taskToDo}
+        <button id = "deleteBtn" class = "btn-sm btn-danger" data-id = ${task.id}>Delete</button>
+         </li><br />`);
 
-        </li>`);
+        //  <button id = "completeBtn" data-id = ${task.id}>Complete</button>
     }
 }
 
-function deleteTask(){
+//-----------------------------------------------------
+
+function deleteTask() {
     console.log('deleteTask clicked');
     let taskId = $(this).data('id');
-    console.log(`in DELETE ${taskId}`,taskId);
-    $.ajax({
-        type: 'DELETE',
-        url: `/tasks/${taskId}`,
-    }).then((response) => {
-        console.log(response);
-        getItem();
-    }).catch((error) =>{
-        console.log('Error in delete task',error);
-    })
+    console.log(`in DELETE ${taskId}`, taskId);
+    let confirmDelete = confirm('Are you sure want to delete this task?');
+    if (confirmDelete == true) {
+        txt = "You pressed OK!";
+        $.ajax({
+            type: 'DELETE',
+            url: `/tasks/${taskId}`,
+        }).then((response) => {
+            console.log(response);
 
+            getItem();
+        }).catch((error) => {
+            console.log('Error in delete task', error);
+        })
+    } else {
+        txt = "You pressed Cancel!";
+    }
 }
 
+//-----------------------------------------------------
+
+function completeTask() {
+    console.log('clicked checkbox!');
+    // let taskId = $(this).data('id');
+    // console.log('in PUT book status', taskId);
+    // $(this).parent().removeClass('beforeChecked');
+    $(this).parent().addClass('textTask');
+
+    // $.ajax({
+    //     type: 'PUT',
+    //     url: `/tasks/${taskId}`,
+    // }).then((response) => {
+    //     console.log(response);
+
+    //     getItem(); //Update to DOM
+
+    // }).catch((err) => {
+    //     console.log('Error in updateBookStatus', err);
+    // })
+}

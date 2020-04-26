@@ -1,0 +1,50 @@
+ body{
+     background-color: antiquewhite;
+}
+
+h1{
+    text-align: center;
+}
+.contain{
+    text-align: center;
+    margin:0px 30%;
+}
+
+.inputfield{
+    margin-bottom:10%;
+}
+
+.addTask{
+    background-color: rgb(192, 120, 61);
+}
+
+.output{
+    border: 1px solid black;
+    text-align: center;
+    padding-right: 40px;
+}
+h3{
+    margin:5% 0px;
+}
+
+.beforeCheck{
+    margin : 2px;
+    text-align: left;
+    padding: 1%;
+    background-color: white;
+}
+
+/* ul li.checked {
+    background: #888;
+    color: #fff;
+} */
+
+.textTask{
+    text-decoration: line-through;
+    background-color: lightgray;
+
+}
+
+li{
+    list-style-type: none;
+}

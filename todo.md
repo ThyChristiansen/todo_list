@@ -43,8 +43,8 @@
             [] Button
             [] Inputs
             [] Responsive
-    [] feature-confirm-delete
-        [] Create an 'are you sure: yes / no' option when deleting a task.
+    [x] feature-confirm-delete
+        [x] Create an 'are you sure: yes / no' option when deleting a task.
     [] feature-ordering-task-query
 
 

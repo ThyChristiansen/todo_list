@@ -7,26 +7,28 @@
     <title>To-do list</title>
     <script type="text/javascript" src="vendors/jquery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
-    <!-- <link rel="stylesheet" href="vendors/bootstrap.css"> -->
+    <link rel="stylesheet" href="vendors/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <header>
-        <h1 class="header_todo">To-do list</h1>
+        <h1 class="header_todo jumbotron">To-do list</h1>
     </header>
-    <div>
-        <p>Give me what have to do</p>
-        <input type="text" placeholder="Task" id="inputTask">
-        <button class="btn addTask" id="addBtn">Add</button>
+    <div class ="contain">
+        <div class = "inputfield">
+            <!-- <p>Give me what have to do</p> -->
+            <input type="text" placeholder="Task" id="inputTask">
+            <button class="btn addTask" id="addBtn">Add</button>
+        </div>
+        <div class = "output">
+            <h3>List to do</h3>
+            <ul id="listTask">
+            </ul>
+    
+        </div>
     </div>
-    <div>
-        <p>To-do list</p>
-        <ul id="listTask">
-            <li>task here</li>
-        </ul>
-
-    </div>
+    
 
 </body>
 

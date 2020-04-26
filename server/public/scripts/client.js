@@ -6,9 +6,14 @@ function readyNow() {
     $('#listTask').on('click', '#deleteBtn', deleteTask);
     // $('#listTask').on('click', '.checkboxTask', completeTask); give up  checkbox
     $('#listTask').on('click', '#completeBtn', completeTask);
+    $('.btn').mouseenter(buttonMouseEnter);
+    $('.btn').mouseleave(buttonMouseLeave);
+    $('#inputTask').mouseenter(inputTaskEnter);
+    $('#inputTask').mouseleave(inputTaskLeave);
 
 
 }
+
 
 function addClick() {
     console.log('addBtn clicked!');
@@ -56,7 +61,7 @@ function renderToDOM(tasksArray) {
 
     }
 }
-        // <input type="checkbox" class="checkboxTask" data-id = ${task.id}">   give up checkbox    
+// <input type="checkbox" class="checkboxTask" data-id = ${task.id}">   give up checkbox    
 
 //-----------------------------------------------------
 
@@ -98,4 +103,17 @@ function completeTask() {
     }).catch((err) => {
         console.log('Error in completeTask', err);
     })
+}
+
+function buttonMouseEnter() {
+    $(this).css({ 'border': '2px solid gray', 'box-shadow': '1px 1px 3px gray' });
+}
+function buttonMouseLeave() {
+    $(this).css({ 'border': '0px solid white' });
+}
+function inputTaskEnter() {
+    $(this).css({ 'border': '1px solid gray', 'box-shadow': '1px 1px 3px gray' });
+}
+function inputTaskLeave() {
+    $(this).css({ 'border': '0px solid white' });
 }

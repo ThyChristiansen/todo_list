@@ -58,7 +58,7 @@ function renderToDOM(tasksArray) {
         el.append(`<li id = "text" class = "beforeCheck"> 
         ${task.taskToDo}
         <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
-        <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Complete</button>
+        <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Completed</button>
         </li><br />`);
 
     }
@@ -76,7 +76,10 @@ function deleteTask() {
     // } else {
     //     return false;
     // }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this task!",
@@ -105,6 +108,10 @@ function deleteTask() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 }
 
 //-----------------------------------------------------

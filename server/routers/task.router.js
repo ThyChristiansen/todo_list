@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     let newTask = req.body;
     console.log('Adding new task:', newTask);
-
     let queryText = `INSERT INTO "tasks" ("taskToDo") VALUES ($1);`
     let values = [newTask.taskToDo]
     pool.query(queryText, values)
@@ -46,28 +45,6 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// router.put('/:id', (req, res) => {
-//     let task = req.body;
-//     let id = req.params.id;
-//     console.log(`Updating task ${id} : `, id);
-//     // let queryString;
-//     // if(task.direction == true ){
-//     // `UPDATE "tasks" SET "status" = 'Completed' WHERE id=$1;`
-//     // }else if(task.direction == false ){
-//     // `UPDATE "tasks" SET "status" = 'UnCompleted' WHERE id=$1;`
-//     // }
-//     let queryString = `UPDATE "tasks" SET "status" = 'Completed' WHERE id=$1;`
-//     pool.query(queryString, [id])
-//         .then((response) => {
-//             console.log('in update router', response);
-//             res.sendStatus(201);
-
-//         }).catch((err) => {
-//             console.log('Error in update router', err);
-//             res.sendStatus(500);
-
-//         })
-// })
 
 router.put('/:id', (req, res) => {
     let task = req.body;

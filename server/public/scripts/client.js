@@ -36,6 +36,7 @@ function getItem() {
         url: '/tasks',
     }).then((response) => {
         console.log('from GET', response);
+
         renderToDOM(response);
     }).catch((err) => {
         console.log('Error in GET', err);

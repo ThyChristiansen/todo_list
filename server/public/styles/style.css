@@ -1,50 +1,72 @@
- body{
-     background-color: antiquewhite;
+
+body{
+    background-color: antiquewhite;
 }
 
 h1{
-    text-align: center;
+   text-align: center;
+   font-family: 'Bungee Outline', cursive;
+   font-size: 50px;
+   background-color: rgba(182, 83, 17, 0.719);
+   text-shadow: 1px 1px 10px black;
+   /* text-shadow: 2px 2px blue; */
+
+
 }
 .contain{
-    text-align: center;
-    margin:0px 30%;
+   text-align: center;
+   margin:0px 30%;
 }
 
 .inputfield{
-    margin-bottom:10%;
+   margin-bottom:10%;
+
 }
 
 .addTask{
-    background-color: rgb(192, 120, 61);
+   background-color: rgb(192, 120, 61);
+
 }
 
 .output{
-    border: 1px solid black;
-    text-align: center;
-    padding-right: 40px;
+   border: 1px solid black;
+   text-align: center;
+   padding-right: 40px;
 }
 h3{
-    margin:5% 0px;
+   font-family: 'Bungee Hairline', cursive;
+   text-shadow: 1px 1px 10px black;
+
+   color: rgb(133, 74, 31);
+   margin:5% 0px;
 }
 
 .beforeCheck{
-    margin : 2px;
-    text-align: left;
-    padding: 1%;
-    background-color: white;
+   margin : 2px;
+   text-align: left;
+   padding: 1%;
+   background-color: white;
 }
 
-/* ul li.checked {
-    background: #888;
-    color: #fff;
-} */
+.taskOutBtn{
+   padding-bottom: 1px;
+   border-top-width: 0px;
+   padding-top: 0px;
+   border-bottom-width: 0px;
+   margin-bottom: 1px;
+   float: right;
+   margin: 0px 2px;
+   display: flex;
+
+  
+}
 
 .textTask{
-    text-decoration: line-through;
-    background-color: lightgray;
-
+   text-decoration: line-through;
+   background-color: lightgray;
+   color: gray;
 }
 
 li{
-    list-style-type: none;
+   list-style-type: none;
 }

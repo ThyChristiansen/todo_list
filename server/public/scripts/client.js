@@ -27,7 +27,7 @@ function addClick() {
         swal("Added new task!", ".", "success");
         getItem();
         $('#inputTask').val('');
-        swal("Added successfully");
+        // swal("Added successfully");
 
     }).catch((error) => {
         console.log('Error in POST', error);

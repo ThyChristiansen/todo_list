@@ -27,6 +27,7 @@ function addClick() {
         data: taskToSend
     }).then((response) => {
         console.log('Back from POST', response);
+        swal("Added new task!", ".", "success");
         getItem();
         $('#inputTask').val('');
         swal("Added successfully");

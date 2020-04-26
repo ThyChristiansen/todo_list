@@ -1,5 +1,5 @@
 ## Base
-    [] Set up
+    [x] Set up
         [x] npm init --yes
         [x] npm install Express
         [x] npm install body-parser
@@ -20,7 +20,7 @@
         [x] Store it inside of a database (SQL)
             [x] Create table in SQL
         [x]Setup server
-        [] client
+        [x] client
             [x] test btn activity
         [x] GET, POST, append to DOM
         [x] Refrest the DOM to show all tasks after it is created. 
@@ -32,7 +32,7 @@
     [x] Background
     [x] font family and size
     [xx] text-color of Tasks (to show completed or not)
-    [] background color Tasks (to show completed or not)
+    [x] background color Tasks (to show completed or not)
 
 [] clean up & styling    
 

@@ -27,7 +27,7 @@
     [x] Button Complete for each task
             [x] when btn click => visual representation should change
     [x] Button Delete
-        [] Remove task both from frond-end and Database
+        [x] Remove task both from frond-end and Database
   # Styling
     [x] Background
     [x] font family and size

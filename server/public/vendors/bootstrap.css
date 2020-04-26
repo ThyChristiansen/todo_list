@@ -3643,9 +3643,9 @@ input[type="button"].btn-block {
 
 .input-group-prepend,
 .input-group-append {
-  display: -ms-flexbox;
+  /* display: -ms-flexbox; */
   display: flex;
-}
+padding-left: 30%;}
 
 .input-group-prepend .btn,
 .input-group-append .btn {
@@ -3673,9 +3673,9 @@ input[type="button"].btn-block {
   margin-right: -1px;
 }
 
-.input-group-append {
+/* .input-group-append {
   margin-left: -1px;
-}
+} */
 
 .input-group-text {
   display: -ms-flexbox;
@@ -5242,16 +5242,16 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
   /* background-color: #e9ecef; */
-  border-radius: 0.3rem;
-}
+ border-radius: 0.3rem;
+} 
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .jumbotron {
     padding: 4rem 2rem;
   }
-}
+} */
 
 .jumbotron-fluid {
   padding-right: 0;

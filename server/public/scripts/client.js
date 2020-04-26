@@ -27,7 +27,10 @@ function addClick() {
         swal("Added new task!", ".", "success");
         getItem();
         $('#inputTask').val('');
-        swal("Added successfully!");
+        // swal("Added successfully!");
+        $("#text").fadeIn();
+        $("#text").fadeIn("slow");
+        $("#text").fadeIn(3000);
 
     }).catch((error) => {
         console.log('Error in POST', error);
@@ -52,11 +55,12 @@ function renderToDOM(tasksArray) {
     el.empty();
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        el.append(`<li id = "text" class = "beforeCheck"> 
-        ${task.taskToDo}
+        el.append(`<li id = "text" class = "beforeCheck " > 
+        <spand>${task.taskToDo}</spand>
         <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
         <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Completed</button>
         </li><br />`);
+        // $("#text").css({ 'width': '200', 'height': '30' });
 
     }
 }

@@ -40,6 +40,7 @@ li{
    font-family: 'Nanum Pen Script', cursive;
    font-size: 100%;
    word-wrap: break-word;
+   border-radius: 100px;
 }
 
 .output{
@@ -49,6 +50,7 @@ li{
    padding-top: 2.5%;
    margin: 0px 30%;
 
+
  }
  
 .beforeCheck{
@@ -56,17 +58,24 @@ li{
    padding: 0.5%;
    background-color: white;
    margin: -1.5% 0px;
+   padding-left:10px;
+}
+
+#deleteBtn{
+   margin-right: 10px;
 }
 
 .taskOutBtn{
-   padding-bottom: 1px;
-   border-top-width: 0px;
+   padding-bottom: 0px;
    padding-top: 0px;
-   border-bottom-width: 0px;
-   float: right; 
-   margin: 0px 2px; 
+   position: relative;
+   float: right;
+   margin: 1px 1px; 
    display: flex; 
    font-size: 90%;
+   text-align: center;
+   
+
 
 }
 
@@ -74,6 +83,8 @@ li{
    text-decoration: line-through;
    background-color: lightgray;
    color: gray;
+   padding-left:30px;
+
 }
 
 /* ------------------------Footer------------------------------------ */

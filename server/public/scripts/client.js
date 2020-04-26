@@ -27,6 +27,7 @@ function addClick() {
         data: taskToSend
     }).then((response) => {
         console.log('Back from POST', response);
+        swal("Added new task!", ".", "success");
         getItem();
         $('#inputTask').val('');
     }).catch((error) => {
@@ -69,20 +70,39 @@ function deleteTask() {
     console.log('deleteTask clicked');
     let taskId = $(this).data('id');
     console.log(`in DELETE ${taskId}`, taskId);
-    let confirmDelete = confirm('Are you sure want to delete this task?');
-    if (confirmDelete == true) {
-        $.ajax({
+    // let confirmDelete = confirm('Are you sure want to delete this task?');
+     // if (confirmDelete == true) { 
+    // } else {
+    //     return false;
+    // }
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this task!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your task has been deleted!", {
+            icon: "success",
+          });
+          $.ajax({
             type: 'DELETE',
             url: `/tasks/${taskId}`,
         }).then((response) => {
             console.log(response);
+            
             getItem();
         }).catch((error) => {
             console.log('Error in delete task', error);
         })
-    } else {
-        return false;
-    }
+        } else {
+          swal("Your task is safe!");
+        }
+      });
+
+   
 }
 
 //-----------------------------------------------------

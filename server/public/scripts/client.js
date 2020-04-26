@@ -135,10 +135,10 @@ function completeTask() {
 }
 
 function buttonMouseEnter() {
-    $(this).css({ 'border': '2px solid gray', 'box-shadow': '1px 1px 3px gray' });
+    $(this).css({ 'border': '2px solid gray', 'box-shadow': '1px 1px 3px gray','text-decoration':'underline'});
 }
 function buttonMouseLeave() {
-    $(this).css({ 'border': '0px solid white' });
+    $(this).css({ 'border': '0px solid white','text-decoration':'none' });
 }
 function inputTaskEnter() {
     $(this).css({ 'border': '1px solid gray', 'box-shadow': '1px 1px 3px gray' });

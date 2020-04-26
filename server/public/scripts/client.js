@@ -66,7 +66,6 @@ function deleteTask() {
     console.log(`in DELETE ${taskId}`, taskId);
     let confirmDelete = confirm('Are you sure want to delete this task?');
     if (confirmDelete == true) {
-        txt = "You pressed OK!";
         $.ajax({
             type: 'DELETE',
             url: `/tasks/${taskId}`,
@@ -78,8 +77,9 @@ function deleteTask() {
             console.log('Error in delete task', error);
         })
     } else {
-        txt = "You pressed Cancel!";
+        return false;
     }
+
 }
 
 //-----------------------------------------------------

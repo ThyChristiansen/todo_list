@@ -4,7 +4,7 @@ function readyNow() {
     getItem();
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
-    // $('#listTask').on('click', '.checkboxTask', completeTask); give up  checkbox
+    // $('#listTask').on('click', '.checkboxTask', completeTask); give up checkbox
     $('#listTask').on('click', '#completeBtn', completeTask);
     $('.btn').mouseenter(buttonMouseEnter);
     $('.btn').mouseleave(buttonMouseLeave);
@@ -61,7 +61,7 @@ function renderToDOM(tasksArray) {
 
     }
 }
-// <input type="checkbox" class="checkboxTask" data-id = ${task.id}">   give up checkbox    
+// <input type="checkbox" class="checkboxTask" data-id = ${task.id}"> I intended to use checkbox    
 
 //-----------------------------------------------------
 
@@ -83,7 +83,6 @@ function deleteTask() {
     } else {
         return false;
     }
-
 }
 
 //-----------------------------------------------------

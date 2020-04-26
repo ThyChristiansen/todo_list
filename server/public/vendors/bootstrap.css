@@ -3643,9 +3643,10 @@ input[type="button"].btn-block {
 
 .input-group-prepend,
 .input-group-append {
-  /* display: -ms-flexbox; */
+  display: -ms-flexbox;
   display: flex;
-padding-left: 30%;}
+/* padding-left: 30%; */
+}
 
 .input-group-prepend .btn,
 .input-group-append .btn {
@@ -3673,9 +3674,9 @@ padding-left: 30%;}
   margin-right: -1px;
 }
 
-/* .input-group-append {
+.input-group-append {
   margin-left: -1px;
-} */
+}
 
 .input-group-text {
   display: -ms-flexbox;

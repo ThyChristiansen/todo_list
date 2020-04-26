@@ -4,7 +4,7 @@ function readyNow() {
     getItem();
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
-    $('#listTask').on('click', '#checkboxTask', completeTask);
+    $('#listTask').on('click', '.checkboxTask', completeTask);
 
 }
 
@@ -21,6 +21,7 @@ function addClick() {
     }).then((response) => {
         console.log('Back from POST', response);
         getItem();
+        $('#inputTask').val('');
 
     }).catch((error) => {
         console.log('Error in POST', error);
@@ -47,12 +48,13 @@ function renderToDOM(tasksArray) {
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
         el.append(`<li id = "text" class = "beforeCheck"> 
-        <input type="checkbox" id="checkboxTask" data-id = ${task.id}">       
+        <input type="checkbox" class="checkboxTask" data-id = ${task.id}">       
         ${task.taskToDo}
-        <button id = "deleteBtn" class = "btn-sm btn-danger" data-id = ${task.id}>Delete</button>
-         </li><br />`);
+        <button id = "deleteBtn" class = "btn taskOutBtn btn-danger" data-id = ${task.id}>Delete</button>
+        <button class = " btn btn-success taskOutBtn checkboxTask" data-id = ${task.id}>Complete</button>
 
-        //  <button id = "completeBtn" data-id = ${task.id}>Complete</button>
+        </li><br />`);
+
     }
 }
 

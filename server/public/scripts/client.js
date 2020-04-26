@@ -92,7 +92,6 @@ function deleteTask() {
             url: `/tasks/${taskId}`,
         }).then((response) => {
             console.log(response);
-            
             getItem();
         }).catch((error) => {
             console.log('Error in delete task', error);
@@ -101,8 +100,6 @@ function deleteTask() {
           swal("Your task is safe!");
         }
       });
-
-   
 }
 
 //-----------------------------------------------------

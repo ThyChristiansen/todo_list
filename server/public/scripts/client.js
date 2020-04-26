@@ -24,13 +24,9 @@ function addClick() {
         data: taskToSend
     }).then((response) => {
         console.log('Back from POST', response);
-        swal("Added new task!", ".", "success");
-        getItem();
         $('#inputTask').val('');
-        // swal("Added successfully!");
-        $("#text").fadeIn();
-        $("#text").fadeIn("slow");
-        $("#text").fadeIn(3000);
+        getItem();
+
 
     }).catch((error) => {
         console.log('Error in POST', error);
@@ -45,24 +41,30 @@ function getItem() {
     }).then((response) => {
         console.log('from GET', response);
         renderToDOM(response);
+
+
     }).catch((err) => {
         console.log('Error in GET', err);
     })
 }
 
 function renderToDOM(tasksArray) {
+
     let el = $('#listTask');
     el.empty();
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        el.append(`<li id = "text" class = "beforeCheck " > 
+        el.append(`<li id = "text" class = "beforeCheck" > 
         <spand>${task.taskToDo}</spand>
         <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
         <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Completed</button>
         </li><br />`);
         // $("#text").css({ 'width': '200', 'height': '30' });
+        // $('#text').addClass("w3-center w3-animate-top")
+        $(this).addClass("w3-center w3-animate-top")
 
     }
+
 }
 // <input type="checkbox" class="checkboxTask" data-id = ${task.id}"> I intended to use checkbox    
 
@@ -77,6 +79,11 @@ function deleteTask() {
     // } else {
     //     return false;
     // }
+    $(this).parent().fadeOut();
+    $(this).parent().fadeOut("slow");
+    $(this).parent().fadeOut(10000);
+    $(this).parent().slideUp(20000);
+
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this task!",
@@ -111,6 +118,10 @@ function completeTask() {
     let taskId = $(this).data('id');
     console.log('in PUT tasks status', taskId);
     $(this).parent().addClass('textTask');
+
+    // $(this).parent().fadeOut(1000);
+    // $(this).parent().slideUp(1000); //this one I made just for fun
+
     $.ajax({
         type: 'PUT',
         url: `/tasks/${taskId}`,

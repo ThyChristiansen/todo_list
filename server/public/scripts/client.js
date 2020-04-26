@@ -4,7 +4,9 @@ function readyNow() {
     getItem();
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
-    $('#listTask').on('click', '.checkboxTask', completeTask);
+    // $('#listTask').on('click', '.checkboxTask', completeTask); give up  checkbox
+    $('#listTask').on('click', '#completeBtn', completeTask);
+
 
 }
 
@@ -22,7 +24,6 @@ function addClick() {
         console.log('Back from POST', response);
         getItem();
         $('#inputTask').val('');
-
     }).catch((error) => {
         console.log('Error in POST', error);
     })
@@ -36,7 +37,6 @@ function getItem() {
         url: '/tasks',
     }).then((response) => {
         console.log('from GET', response);
-
         renderToDOM(response);
     }).catch((err) => {
         console.log('Error in GET', err);
@@ -49,15 +49,14 @@ function renderToDOM(tasksArray) {
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
         el.append(`<li id = "text" class = "beforeCheck"> 
-        <input type="checkbox" class="checkboxTask" data-id = ${task.id}">       
         ${task.taskToDo}
-        <button id = "deleteBtn" class = "btn taskOutBtn btn-danger" data-id = ${task.id}>Delete</button>
-        <button class = " btn btn-success taskOutBtn checkboxTask" data-id = ${task.id}>Complete</button>
-
+        <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
+        <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Complete</button>
         </li><br />`);
 
     }
 }
+        // <input type="checkbox" class="checkboxTask" data-id = ${task.id}">   give up checkbox    
 
 //-----------------------------------------------------
 
@@ -72,7 +71,6 @@ function deleteTask() {
             url: `/tasks/${taskId}`,
         }).then((response) => {
             console.log(response);
-
             getItem();
         }).catch((error) => {
             console.log('Error in delete task', error);
@@ -86,21 +84,18 @@ function deleteTask() {
 //-----------------------------------------------------
 
 function completeTask() {
-    console.log('clicked checkbox!');
-    // let taskId = $(this).data('id');
-    // console.log('in PUT book status', taskId);
-    // $(this).parent().removeClass('beforeChecked');
+    console.log('clicked!');
+    let taskId = $(this).data('id');
+    console.log('in PUT tasks status', taskId);
     $(this).parent().addClass('textTask');
-
-    // $.ajax({
-    //     type: 'PUT',
-    //     url: `/tasks/${taskId}`,
-    // }).then((response) => {
-    //     console.log(response);
-
-    //     getItem(); //Update to DOM
-
-    // }).catch((err) => {
-    //     console.log('Error in updateBookStatus', err);
-    // })
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskId}`,
+    }).then((response) => {
+        console.log(response);
+        // getItem();
+        $(this).parent().addClass('textTask');
+    }).catch((err) => {
+        console.log('Error in completeTask', err);
+    })
 }

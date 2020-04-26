@@ -49,18 +49,15 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     let task = req.body;
     let id = req.params.id;
-
-    console.log(`Updating book ${id} with `, id);
+    console.log(`Updating task ${id} with `, id);
     let queryText = `UPDATE "tasks" SET "status" = 'Completed' WHERE id=$1;`
     pool.query(queryText, [id])
         .then((response) => {
             console.log('in update router', response);
             res.sendStatus(201);
-
         }).catch((err) => {
             console.log('Error in update router', err);
             res.sendStatus(500);
-
         })
 });
 

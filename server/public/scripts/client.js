@@ -10,10 +10,7 @@ function readyNow() {
     $('.btn').mouseleave(buttonMouseLeave);
     $('#inputTask').mouseenter(inputTaskEnter);
     $('#inputTask').mouseleave(inputTaskLeave);
-
-
 }
-
 
 function addClick() {
     console.log('addBtn clicked!');
@@ -35,7 +32,6 @@ function addClick() {
     }).catch((error) => {
         console.log('Error in POST', error);
     })
-
 }
 
 function getItem() {
@@ -102,9 +98,6 @@ function deleteTask() {
                 swal("Your task is safe!");
             }
         });
-
-
-
 }
 
 //-----------------------------------------------------

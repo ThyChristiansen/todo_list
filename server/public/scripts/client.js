@@ -1,3 +1,5 @@
+
+
 $(document).ready(readyNow);
 function readyNow() {
     console.log("JQ");
@@ -74,10 +76,7 @@ function deleteTask() {
     // } else {
     //     return false;
     // }
-    $(this).parent().fadeOut();
-    $(this).parent().fadeOut("slow");
-    $(this).parent().fadeOut(10000);
-    $(this).parent().slideUp(20000);
+
 
     swal({
         title: "Are you sure?",
@@ -97,6 +96,8 @@ function deleteTask() {
                 }).then((response) => {
                     console.log(response);
                     getItem();
+                    $(this).parent().fadeOut(10000);
+                    $(this).parent().slideUp(20000);
                 }).catch((error) => {
                     console.log('Error in delete task', error);
                 })

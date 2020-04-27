@@ -27,8 +27,6 @@ function addClick() {
         console.log('Back from POST', response);
         $('#inputTask').val('');
         getItem();
-
-
     }).catch((error) => {
         console.log('Error in POST', error);
     })
@@ -42,8 +40,6 @@ function getItem() {
     }).then((response) => {
         console.log('from GET', response);
         renderToDOM(response);
-
-
     }).catch((err) => {
         console.log('Error in GET', err);
     })
@@ -76,8 +72,6 @@ function deleteTask() {
     // } else {
     //     return false;
     // }
-
-
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this task!",

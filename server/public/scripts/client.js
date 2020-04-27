@@ -5,7 +5,7 @@ function readyNow() {
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
     // $('#listTask').on('click', '.checkboxTask', completeTask); give up checkbox
-    $('#listTask').on('click', '#completeBtn', completeTask);
+    $('#listTask').on('click', '.checkCompleted', completeTask);
     $('.btn').mouseenter(buttonMouseEnter);
     $('.btn').mouseleave(buttonMouseLeave);
     $('#inputTask').mouseenter(inputTaskEnter);
@@ -55,18 +55,16 @@ function renderToDOM(tasksArray) {
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
         el.append(`<li id = "text" class = "beforeCheck" > 
+        <input type="checkbox" class="checkboxTask checkCompleted" data-id = ${task.id}">
         <spand>${task.taskToDo}</spand>
         <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
-        <button id = "completeBtn" class = "btn btn-success taskOutBtn" data-id = ${task.id}>Completed</button>
+        <button id = "completeBtn" class = "btn btn-success taskOutBtn checkCompleted" data-id = ${task.id}>Completed</button>
         </li><br />`);
-        // $("#text").css({ 'width': '200', 'height': '30' });
-        // $('#text').addClass("w3-center w3-animate-top")
         $(this).addClass("w3-center w3-animate-top")
 
     }
 
 }
-// <input type="checkbox" class="checkboxTask" data-id = ${task.id}"> I intended to use checkbox    
 
 //-----------------------------------------------------
 
@@ -135,14 +133,14 @@ function completeTask() {
 }
 
 function buttonMouseEnter() {
-    $(this).css({ 'border': '2px solid gray', 'box-shadow': '1px 1px 3px gray','text-decoration':'underline'});
+    $(this).css({ 'border': '2px solid gray', 'box-shadow': '1px 1px 3px gray', 'text-decoration': 'underline' });
 }
 function buttonMouseLeave() {
-    $(this).css({ 'border': '0px solid white','text-decoration':'none' });
+    $(this).css({ 'border': '0px solid white', 'text-decoration': 'none' });
 }
 function inputTaskEnter() {
-    $(this).css({ 'border': '1px solid gray', 'box-shadow': '1px 1px 3px gray' });
+    $(this).css({ 'border': '1px solid gray', 'box-shadow': '1px 2px 4px gray' });
 }
 function inputTaskLeave() {
-    $(this).css({ 'border': '0px solid white' });
+    $(this).css({ 'border': '1px solid black' });
 }

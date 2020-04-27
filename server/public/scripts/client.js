@@ -114,8 +114,8 @@ function completeTask() {
     console.log('in PUT tasks status', taskId);
     $(this).parent().addClass('textTask');
 
-    $(this).parent().fadeOut(1000);
-    $(this).parent().slideUp(1000); //this one I made just for fun
+    // $(this).parent().fadeOut(1000);
+    // $(this).parent().slideUp(1000); //this one I made just for fun
 
     $.ajax({
         type: 'PUT',

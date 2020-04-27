@@ -96,8 +96,7 @@ function deleteTask() {
                 }).then((response) => {
                     console.log(response);
                     getItem();
-                    $(this).parent().fadeOut(10000);
-                    $(this).parent().slideUp(20000);
+
                 }).catch((error) => {
                     console.log('Error in delete task', error);
                 })

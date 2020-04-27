@@ -4,7 +4,6 @@ function readyNow() {
     getItem();
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
-    // $('#listTask').on('click', '.checkboxTask', completeTask); give up checkbox
     $('#listTask').on('click', '.checkCompleted', completeTask);
     $('.btn').mouseenter(buttonMouseEnter);
     $('.btn').mouseleave(buttonMouseLeave);
@@ -61,9 +60,7 @@ function renderToDOM(tasksArray) {
         <button id = "completeBtn" class = "btn btn-success taskOutBtn checkCompleted" data-id = ${task.id}>Completed</button>
         </li><br />`);
         $(this).addClass("w3-center w3-animate-top")
-
     }
-
 }
 
 //-----------------------------------------------------
@@ -117,8 +114,8 @@ function completeTask() {
     console.log('in PUT tasks status', taskId);
     $(this).parent().addClass('textTask');
 
-    // $(this).parent().fadeOut(1000);
-    // $(this).parent().slideUp(1000); //this one I made just for fun
+    $(this).parent().fadeOut(1000);
+    $(this).parent().slideUp(1000); //this one I made just for fun
 
     $.ajax({
         type: 'PUT',

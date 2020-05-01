@@ -34,7 +34,7 @@
     [xx] text-color of Tasks (to show completed or not)
     [x] background color Tasks (to show completed or not)
 
-[] clean up & styling    
+[x] clean up & styling    
 
 ## Stretch
   # Practicing git branching. 
@@ -45,7 +45,7 @@
             [x] Responsive
     [x] feature-confirm-delete
         [x] Create an 'are you sure: yes / no' option when deleting a task.
-    [] feature-ordering-task-query
+    [x] feature-ordering-task-query
 
 
 

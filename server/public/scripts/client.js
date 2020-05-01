@@ -7,6 +7,7 @@ function readyNow() {
     $('#addBtn').on('click', addClick);
     $('#listTask').on('click', '#deleteBtn', deleteTask);
     $('#listTask').on('click', '.checkCompleted', completeTask);
+
     $('.btn').mouseenter(buttonMouseEnter);
     $('.btn').mouseleave(buttonMouseLeave);
     $('#inputTask').mouseenter(inputTaskEnter);
@@ -51,13 +52,12 @@ function renderToDOM(tasksArray) {
     el.empty();
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        el.append(`<li id = "text" class = "beforeCheck" > 
-        <input type="checkbox" class="checkboxTask checkCompleted" data-id = ${task.id}">
-        <spand>${task.taskToDo}</spand>
-        <button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button>
-        <button id = "completeBtn" class = "btn btn-success taskOutBtn checkCompleted" data-id = ${task.id}>Completed</button>
-        </li><br />`);
-        $(this).addClass("w3-center w3-animate-top")
+        let row = $(`<tr id = "text" class = "beforeCheck"><td>${task.taskToDo}</td></tr>`)
+        row.append(`<td><input type="checkbox" class="checkboxTask checkCompleted" data-id = ${task.id}"></td>`)
+        row.append(`<td><button id = "completeBtn" class = "btn btn-success taskOutBtn checkCompleted" data-id = ${task.id}>Completed</button></td>`)
+
+        el.append(row);
+        row.append(`<td><button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button></td>`)
     }
 }
 

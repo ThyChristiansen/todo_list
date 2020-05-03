@@ -51,14 +51,6 @@ h1{
    text-align: center;
 }
 
-tr{
-   font-family: 'Nanum Pen Script', cursive;
-   font-size: 100%;
-   word-wrap: break-word;
-   border-radius: 10px;
-   margin-top: 10px;
-}
-
 .output{
    border: 2px solid black;
    text-align: center;
@@ -66,10 +58,18 @@ tr{
    padding-left: 30px;
    margin: 0px 30%;
  }
+
+#listTask{
+   font-family: 'Nanum Pen Script', cursive;
+   font-size: 100%;
+   word-wrap: break-word;
+   border-radius: 10px;
+   margin-top: 10px;
+}
+
  
 .beforeCheck{
    /* text-align: left; */
-   padding: 10px;
    background-color: white;
    margin: 10px;
    /* padding-left:10px;  */
@@ -80,8 +80,8 @@ tr{
    margin: 0 5px;
 }
 .checkCompleted{
-   margin-left:90px;
-
+   margin-left: 90px;
+   /* padding-left:90px; */
 }
 
 .taskOutBtn{

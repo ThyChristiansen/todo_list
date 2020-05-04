@@ -1,4 +1,4 @@
-### Project Name: To-do list
+# Project Name: To-do list
 
 ## Description
 Duration: 2 Days Sprint
@@ -8,7 +8,7 @@ Duration: 2 Days Sprint
     * : problem
     - : how did I solve it
 
-  # Base 
+  ### Base 
   * Create a front end experience that allows a user to create a Task.
     - I create an input field and a button in HTML file.
 
@@ -31,7 +31,7 @@ Duration: 2 Days Sprint
 
 
         
-  # Stretch
+  ### Stretch
     * Git branching.  When we have many people working on the same project. Divide branch will be a great option that GitHub offers for us.
         - With GitHub, I have :
             `git branch BRANCH_NAME` to create a new branch
@@ -42,6 +42,13 @@ Duration: 2 Days Sprint
             `git pull origin BRANCH-NAME` to pull down changes inside the BRANCH-NAME from the remote when I am in branch master. 
      * Working with branches
         - To successful in working on branching. To respond to the requirements of the assignment, I create a new branch with git branch BRANCH_NAME. Then I switch to that branch to write the codes, changing codes which is I support to do in that branch. When I am done, I will add and commit what I wrote in that branch. (I also can push what I have changed in that branch to GitHub with `git push origin BRANCH_NAME`). Come bach master branch where all changes of other branches will have been pull in it. I use `git pull --no-ff "BRANCH_NAME" to pull changes from the BRANCH_NAME branch into the master branch. End of all, in the master branch, I will push all of the code that I wrote up to GitHub by `git push origin master`. 
+
+
+## Screen Shot
+
+![mockup one](Screen-Shot/pic_1.png)
+
+![mockup one](Screen-Shot/pic_2.png)
 
 
 ## Built With

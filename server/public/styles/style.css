@@ -1,11 +1,10 @@
-
 body{
     background-color: antiquewhite;
 }
 
 h1{
    text-align: center;
-   font-family: 'Sacramento', cursive;
+   font-family: 'Dancing Script', cursive;
    font-size: 400%;
    background-color: rgba(182, 132, 98, 0.719);
    /* text-decoration: overline; */
@@ -18,8 +17,8 @@ h1{
 .inputField{
    margin-bottom:3%;
    text-align: center;
-   font-family: 'Nanum Pen Script', cursive;
-   font-size: 120%;
+   font-family: 'Scope One', serif; 
+   font-size: 95%;
    width: 100%;
    padding-left: 40%;
 }
@@ -40,7 +39,7 @@ h1{
 /* ------------------------Output------------------------------------ */
 
 .headerOfList{
-   margin: 0px 500px;
+   margin: 0px 30%;
    background-color: rgba(182, 132, 98, 0.719);
    height: 30px;
    border-top: 2px solid black;
@@ -52,50 +51,43 @@ h1{
 }
 
 .output{
+   margin: 0px 30%;
    border: 2px solid black;
    text-align: center;
    padding-top: 20px;
    padding-left: 30px;
-   margin: 0px 500px;
    padding-bottom: 20px;
 
  }
 
 #listTask{
-   font-family: 'Nanum Pen Script', cursive;
-   font-size: 100%;
+   font-family: 'Scope One', serif; 
    word-wrap: break-word;
    border-radius: 10px;
    margin-top: 10px;
+}
 
+.beforeCheck{
+   background-color: white;
 
 }
 
 .text{
    padding-left: 10px;
    text-align: left;
-   background-color: white;
-
-
+   font-size: 80%;
+   width: 400px;
 }
  
 
 #deleteBtn{
-   /* text-align: right; */
-   margin: 0 5px;
-   width: 50px;
+   width: 20px;
 }
 
-#completeBtn{
-   width: 70px;
+#checkbox{
+   width: 20px;
 }
 
-.checkCompleted{
-   margin-left: 90px;
-   width: 50px;
-
-   /* padding-left:90px; */
-}
 
 .btnInTask{
    padding-bottom: 0px;
@@ -112,9 +104,6 @@ h1{
    text-decoration: line-through;
    background-color: lightgray;
    color: gray;
-   /* padding-left:40px; */
-   width: 400px;
-   
 }
 
 

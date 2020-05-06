@@ -6,6 +6,8 @@ function readyNow() {
     $('#addBtn').on('click', addClick); // when add button pressed, it will run addClick function
     $('#listTask').on('click', '#deleteBtn', deleteTask);// when the delete button on table list tasks is pressed, it will run the deleteTask function
     $('#listTask').on('click', '.checkCompleted', completeTask);// when the complete button on table list tasks is pressed, it will run the completeTask function
+    // $('#listTask').on('click', '.checkCompleted', completeTask);// when the complete button on table list tasks is pressed, it will run the completeTask function
+
     //add some visual when we move the mouse over the input field and buttons
     $('.btn').mouseenter(buttonMouseEnter);
     $('.btn').mouseleave(buttonMouseLeave);
@@ -51,17 +53,26 @@ function renderToDOM(tasksArray, derection) {
     el.empty();
     for (let i = 0; i < tasksArray.length; i++) {
         let task = tasksArray[i];
-        let row = $(`<tr id = "text" class = "beforeCheck"><td>${task.taskToDo}</td></tr>`)
+        let row = $(`<tr id = "text" class = "beforeCheck"><td class = "text">${task.taskToDo}</td></tr>`)
         if (task.status) { //condition for complete button
-            // row.append(`<td><input type="checkbox" class="checkboxTask checkCompleted" data-id = ${task.id}"></td>`)
-            row.append(`<td><button id = "completeBtn" class = "btn btn-success taskOutBtn checkCompleted" data-id = ${task.id}>Completed</button></td>`)
+                // row.append(`<td><input type="checkbox" id ="completeBtn" class="btnInTask checkCompleted" data-id = ${task.id}"></td>`)
+            row.append(`<td><button id = "completeBtn" class = "btn btn-success btnInTask checkCompleted" data-id = ${task.id}>Completed</button></td>`)
         } else {
-            // row.append(`<td>Completed</td>`);
-            row.addClass('textTask');
-            row.append(`<td class = "checkCompleted" >Complete</td>`);
+            //add class to change backgroud color and add line-though in text of task
+            $('.text').addClass('textTask');
+            //check icon
+            row.append(`<td><svg class="bi bi-check" id = "completeBtn" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+          </svg></td>`);
         }
         el.append(row);
-        row.append(`<td><button id = "deleteBtn" class = "btn btn-danger taskOutBtn" data-id = ${task.id}>Delete</button></td>`)
+
+        //delete icon
+        row.append(`<td><svg class="bi bi-trash-fill" id = "deleteBtn" data-id = ${task.id} width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z" clip-rule="evenodd"/>
+      </svg></td>`)
+
+        // <td><button id = "deleteBtn" class = "btn btn-danger btnInTask" data-id = ${task.id}>Delete</button></td>`
     }
 }
 
@@ -119,6 +130,7 @@ function completeTask() { //update the DOM everytime we press the complete butto
     }).then((response) => {
         console.log(response);
         getItem();//refrest the DOM after click complete button
+
 
     }).catch((err) => {
         console.log('Error in completeTask', err);

@@ -40,7 +40,7 @@ h1{
 /* ------------------------Output------------------------------------ */
 
 .headerOfList{
-   margin: 0px 30%;
+   margin: 0px 500px;
    background-color: rgba(182, 132, 98, 0.719);
    height: 30px;
    border-top: 2px solid black;
@@ -54,9 +54,11 @@ h1{
 .output{
    border: 2px solid black;
    text-align: center;
-   padding-top: 2.5%;
+   padding-top: 20px;
    padding-left: 30px;
-   margin: 0px 30%;
+   margin: 0px 500px;
+   padding-bottom: 20px;
+
  }
 
 #listTask{
@@ -65,26 +67,37 @@ h1{
    word-wrap: break-word;
    border-radius: 10px;
    margin-top: 10px;
+
+
 }
 
- 
-.beforeCheck{
-   /* text-align: left; */
+.text{
+   padding-left: 10px;
+   text-align: left;
    background-color: white;
-   margin: 10px;
-   /* padding-left:10px;  */
+
+
 }
+ 
 
 #deleteBtn{
    /* text-align: right; */
    margin: 0 5px;
+   width: 50px;
 }
+
+#completeBtn{
+   width: 70px;
+}
+
 .checkCompleted{
    margin-left: 90px;
+   width: 50px;
+
    /* padding-left:90px; */
 }
 
-.taskOutBtn{
+.btnInTask{
    padding-bottom: 0px;
    padding-top: 0px;
    position: relative;
@@ -99,8 +112,11 @@ h1{
    text-decoration: line-through;
    background-color: lightgray;
    color: gray;
-   margin-left:40px;
+   /* padding-left:40px; */
+   width: 400px;
+   
 }
+
 
 
 /* ------------------------Footer------------------------------------ */

@@ -30,8 +30,7 @@ Duration: 2 Days Sprint
     - I write codes in style.css file to do this problem.
 
 
-        
-  ### Stretch
+
     * Git branching.  When we have many people working on the same project. Divide branch will be a great option that GitHub offers for us.
         - With GitHub, I have :
             `git branch BRANCH_NAME` to create a new branch
